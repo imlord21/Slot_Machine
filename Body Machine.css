@@ -1,0 +1,40 @@
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    background-color: black;
+    margin: 0;
+    overflow: hidden;
+}
+
+.slot_machine_container{
+    display: flex;
+    gap:2px;
+    padding: 2px;
+    border: 2px solid blanchedalmond;
+    width: 80px;
+}
+
+.slots {
+    border: lightgray;
+    align-content: center;
+    overflow: hidden;
+    width: 90px;
+    height: 250px;
+    background-image: url("https://assets.codepen.io/439000/slotreel.webp");
+    background-position:0 720px;
+    background-size: auto;
+    display: flex;
+}
+
+.btn {
+    border-color: darkgoldenrod;
+    border-width: 6px;
+    text-decoration-color: black;
+    background-color: gold;
+    width: 90px;
+    height: 50px;
+    object-position: left bottom;
+}
