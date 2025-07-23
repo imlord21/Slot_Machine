@@ -83,6 +83,7 @@ function animation() {
     }, time);
 }
 
+//SET THE STARTING POINT
 document.addEventListener('DOMContentLoaded', () => {
     setSlotSymbol(slot1, 80);
     setSlotSymbol(slot2, 80);
