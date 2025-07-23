@@ -5,15 +5,15 @@ const button = document.getElementById('btn');
 const winLossMes = document.getElementById('message');
 const SPIN_DURATION = 2000;
 const symbolPositions = [
-    -80, //seven
-    -160, //cherry
-    -240, //prune
-    -320, //orange
-    -400, //bell
-    -480, //bar
-    -560, //lemon
-    -640, //watermelon
-    -720, //banana
+    80, //seven
+    160, //cherry
+    240, //prune
+    320, //orange
+    400, //bell
+    480, //bar
+    560, //lemon
+    640, //watermelon
+    720, //banana
 ];
 let symbolPos1, symbolPos2, symbolPos3;
 let currentSpinPosition1 = 0;
@@ -84,9 +84,9 @@ function animation() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    setSlotSymbol(slot1, 0);
-    setSlotSymbol(slot2, 0);
-    setSlotSymbol(slot3, 0);
+    setSlotSymbol(slot1, 80);
+    setSlotSymbol(slot2, 80);
+    setSlotSymbol(slot3, 80);
 });
 
 button.addEventListener('click', animation);
