@@ -2,6 +2,7 @@ const slot1 = document.getElementById('slot1');
 const slot2 = document.getElementById('slot2');
 const slot3 = document.getElementById('slot3');
 const button = document.getElementById('btn');
+const winLossMes = document.getElementById('message');
 const SPIN_DURATION = 2000;
 let positionByTwenty = 0;
 const symbolPositions = [
@@ -17,7 +18,7 @@ const symbolPositions = [
 ];
 let symbolPos1, symbolPos2, symbolPos3;
 
-//SELECT RANDOM SYMBOL
+//SELECT RANDOM SYMBOL //*
 function getRandomSymbolPosition() {
     const randomIndex = Math.floor(Math.random() * symbolPositions.length);
     return symbolPositions[randomIndex];
@@ -30,7 +31,7 @@ function setSlotSymbol(slotElement, yPosition) {
 
 //ANIMATION SPEED
 function getPxByTwenty() {
-    return positionByTwenty = (positionByTwenty + 20) % 660;
+    return positionByTwenty = (positionByTwenty + 20) % 720;
 }
 
 //INSERT (positionByTwenty) INTO BKPS
@@ -39,21 +40,23 @@ function backgroundPx(slotElement) {
 }
 
 //WIN/LOOSE ALERT
-function winLooseCondition() {
+function winLostCondition() {
     const winByAll = (symbolPos1 === symbolPos2) && (symbolPos2 === symbolPos3);
     const winByTwo = (symbolPos1 === symbolPos2) || (symbolPos2 === symbolPos3);
     if (winByAll) {
-        alert("YOU WIN!!");
+        winLossMes.textContent = "JACKPOT!!";
+        winLossMes.style.color = "gold";
     } else if (winByTwo) {
-        alert("YOU WIN!!");
+        winLossMes.textContent = "YOU WIN!!";
+        winLossMes.style.color = "green";
     } else {
-        alert("YOU LOOSE!!");
+        winLossMes.textContent = "YOU LOST!!";
+        winLossMes.style.color = "red";
     }
 }
 
 //MAIN FUNCTION
 function animation() {
-    btn.disabled = true;
     symbolPos1 = getRandomSymbolPosition();
     symbolPos2 = getRandomSymbolPosition();
     symbolPos3 = getRandomSymbolPosition();
@@ -69,8 +72,7 @@ function animation() {
             setSlotSymbol(slot1, symbolPos1);
             setSlotSymbol(slot2, symbolPos2);
             setSlotSymbol(slot3, symbolPos3);
-            btn.disabled = false;
-            winLooseCondition();
+            winLostCondition();
         }
     }, time);
 }

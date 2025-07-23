@@ -38,3 +38,10 @@ body {
     height: 50px;
     object-position: left bottom;
 }
+
+.message {
+    color: lawngreen;
+    align-items: center;
+    justify-content: normal;
+    font-size: 20px;
+}
